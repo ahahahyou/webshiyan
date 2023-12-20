@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>集章寻宝</title>
+  <meta charset="utf-8" />
+  <style>
+    body {
+      background-image: url('background.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: antiquewhite;
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .treasure-container {
+      position: relative;
+      display: inline-block;
+      margin: 50px;
+      top: 100px;
+    }
+
+    .image {
+      position: relative;
+    }
+
+    .name {
+      background-color: indianred;
+      color: #ffffff;
+      position: relative;
+      top: 10px; /* 更改为固定的像素值 */
+      height: 30px;
+      line-height: 30px;
+      width: 200px;
+      text-align: center;
+      border-radius: 15px;
+      z-index: 1;
+    }
+
+    .title {
+      display: block;
+      background-color: darkred;
+      color: #ffffff;
+      font-size: 20px;
+      line-height: 60px;
+      height: 60px;
+      margin-top: 30px;
+      border-radius: 15px;
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      width: 50%;
+      text-align: center;
+    }
+
+    .back-to-home {
+      position: fixed;
+      right: 20px;
+      bottom: 40px;
+      background-color: darkred;
+      color: #ffffff;
+      font-size: 20px;
+      line-height: 60px;
+      height: 60px;
+      padding: 0 20px;
+      text-decoration: none;
+      border-radius: 15px;
+    }
+	.back-to-home {
+	  background-color: #9c0000;
+	  animation: flicker 0.8s infinite;
+	  animation-play-state: paused;
+	}
+	
+	.back-to-home:hover {
+	  animation-play-state: running;
+	}
+	
+	@keyframes flicker {
+	  0% { background-color: #9c0000; }
+	  50% { background-color: #ffffff; }
+	  100% { background-color: #9c0000; }
+	}
+
+	.hidden {
+	  visibility: hidden;
+	}
+	.showAllStamps {
+	  position: fixed;
+	  right: 20px;
+	  bottom: 140px;
+	  background-color: darkred;
+	  color: #ffffff;
+	  font-size: 20px;
+	  line-height: 60px;
+	  height: 60px;
+	  padding: 0 20px;
+	  text-decoration: none;
+	  border-radius: 15px;
+	  animation: flicker 0.8s infinite;
+	  animation-play-state: paused;
+	  border: none;
+	}
+	
+	.showAllStamps:hover {
+	  animation-play-state: running;
+	}
+	
+	@keyframes flicker {
+	  0% { background-color: darkred; }
+	  50% { background-color: #ffffff; }
+	  100% { background-color: darkred; }
+	}
+
+  </style>
+</head>
+<body>
+<div class="title">十大镇馆之宝之集章寻宝</div>
+<div class="treasure-container image1" style="margin: 50px;" onclick="toggleImage('image1')">
+  <img class="hidden" src="战国伎乐铜房屋模型.jpg" alt="战国伎乐铜房屋模型" width="200px" height="200px" />
+  <div class="name" style="margin-top: 10px;">战国伎乐铜房屋模型</div>
+</div>
+<div class="treasure-container image2" style="margin: 50px;" onclick="toggleImage('image2')">
+  <img class="hidden" src="战国越王者旨於赐剑.jpg" alt="战国越王者旨於赐剑" width="200px" height="200px" />
+  <div class="name" style="margin-top: 10px;">战国越王者旨於赐剑</div>
+</div>
+<div class="treasure-container image3" style="margin: 50px;" onclick="toggleImage('image3')">
+  <img class="hidden" src="元龙泉窑青瓷舟形砚滴.jpg" alt="元龙泉窑青瓷舟形砚滴" width="200px" height="200px" />
+  <div class="name" style="margin-top: 10px;">元龙泉窑青瓷舟形砚滴</div>
+</div>
+<div class="treasure-container image4" style="margin: 50px;"onclick="toggleImage('image4')">
+  <img class="hidden" src="新石器时代良渚文化玉琮.jpg" alt="新石器时代良渚文化玉琮" width="200px" height="200px" />
+  <div class="name" style="margin-top: 10px;">新石器时代良渚文化玉琮</div>
+</div>
+<div class="treasure-container image5" style="margin: 50px;"onclick="toggleImage('image5')">
+  <img class="hidden" src="元黄公富春山居图卷.jpg" alt="元黄公富春山居图卷" width="200px" height="200px" />
+  <div class="name" style="margin-top: 10px;">元黄公富春山居图卷</div>
+</div>
+<div class="treasure-container image6" style="margin: 50px;"onclick="toggleImage('image6')">
+  <img class="hidden" src="吴越国鎏金纯银阿育王塔.jpg" alt="吴越国鎏金纯银阿育王塔" width="200px" height="200px" />
+  <div class="name" style="margin-top: 10px;">吴越国鎏金纯银阿育王塔</div>
+</div>
+<div class="treasure-container image7" style="margin: 50px;"onclick="toggleImage('image7')">
+  <img class="hidden" src="唐彩凤鸣崎七弦琴.jpg" alt="唐彩凤鸣崎七弦琴" width="200px" height="200px" />
+  <div class="name" style="margin-top: 10px;">唐彩凤鸣崎七弦琴</div>
+</div>
+<div class="treasure-container image8" style="margin: 50px;"onclick="toggleImage('image8')">
+  <img class="hidden" src="双鸟朝阳纹牙雕.jpg" alt="双鸟朝阳纹牙雕" width="200px" height="200px" />
+  <div class="name" style="margin-top: 10px;">双鸟朝阳纹牙雕</div>
+</div>
+<div class="treasure-container image9" style="margin: 50px;"onclick="toggleImage('image9')">
+  <img class="hidden" src="清金箔贴花花轿.jpg" alt="清金箔贴花花轿" width="200px" height="200px" />
+  <div class="name" style="margin-top: 10px;">清金箔贴花花轿</div>
+</div>
+<div class="treasure-container image10" style="margin: 50px;"onclick="toggleImage('image10')">
+  <img class="hidden" src="彩塑泥菩萨立像.jpg" alt="彩塑泥菩萨立像" width="200px" height="200px" />
+  <div class="name" style="margin-top: 10px;">彩塑泥菩萨立像</div>
+</div>
+<a href="index.html" class="back-to-home">返回首页</a>
+<button id="showAllStamps" onclick="showAllImages()" class="showAllStamps">显示全部</button>
+
+<script>
+  function toggleImage(imageClass) {
+      var image = document.getElementsByClassName(imageClass)[0].getElementsByTagName('img')[0];
+      if (image.classList.contains('hidden')) {
+        // 创建一个新的div元素，用于显示大图
+        var overlay = document.createElement('div');
+        overlay.className = 'overlay';
+        // 创建一个新的img元素，用于显示大图
+        var overlayImg = document.createElement('img');
+        overlayImg.src = image.src;
+        overlayImg.alt = image.alt;
+        overlay.appendChild(overlayImg);
+        document.body.appendChild(overlay);
+        // 设置大图样式，使其在屏幕中间位置占屏幕60%大小
+        overlay.style.display = 'flex';
+        overlay.style.alignItems = 'center';
+        overlay.style.justifyContent = 'center';
+        overlay.style.position = 'fixed';
+        overlay.style.top = 0;
+        overlay.style.left = 0;
+        overlay.style.right = 0;
+        overlay.style.bottom = 0;
+        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+        overlay.style.zIndex = 999;
+        overlayImg.style.maxWidth = '60%';
+        overlayImg.style.maxHeight = '60%';
+        overlayImg.style.transition = 'transform 0.5s ease-in-out';
+        // 显示大图，并设置平滑的过渡效果
+        overlayImg.style.transform = 'scale(1)';
+        setTimeout(function() {
+          overlayImg.style.transform = 'scale(1.5)';
+        }, 0); // 等待0毫秒后放大图片，以使过渡效果生效
+        
+        // 添加事件监听器，当点击overlay外的区域时，关闭大图
+        overlay.addEventListener('click', function(event) {
+          if (event.target === overlay) {
+            var overlayImg = overlay.getElementsByTagName('img')[0];
+            overlayImg.style.transform = 'scale(1)';
+            overlayImg.style.transition = 'transform 0.5s ease-in-out';
+            setTimeout(function() {
+              overlay.style.display = 'none';
+              document.body.removeChild(overlay);
+              // 隐藏大图后，显示小图
+              image.classList.remove('hidden');
+            }, 500); // 等待0.5秒后隐藏并删除overlay元素，以使过渡效果完成
+          }
+        });
+      } else {
+        // 隐藏小图，并设置平滑的过渡效果
+        image.classList.add('hidden');
+        var overlay = document.getElementsByClassName('overlay')[0];
+        var overlayImg = overlay.getElementsByTagName('img')[0];
+        overlayImg.style.transform = 'scale(1)';
+        overlayImg.style.transition = 'transform 0.5s ease-in-out';
+        setTimeout(function() {
+          overlay.style.display = 'none';
+          document.body.removeChild(overlay);
+        }, 500); // 等待0.5秒后隐藏并删除overlay元素，以使过渡效果完成
+      }
+    }
+	function showAllImages() {
+	      var treasureContainers = document.querySelectorAll('.treasure-container');
+	      for (var i = 0; i < treasureContainers.length; i++) {
+	        treasureContainers[i].querySelector('img').classList.remove('hidden');
+	      }
+	    }
+
+</script>
+
+</body>
+</html>
