@@ -109,6 +109,13 @@
 	  animation-play-state: running;
 	}
 	
+	.name:hover {
+	  cursor: pointer;
+	  background-color: darkred;
+	  color: white;
+	  font-weight: bold;
+	}
+	
 	@keyframes flicker {
 	  0% { background-color: darkred; }
 	  50% { background-color: #ffffff; }
@@ -117,47 +124,48 @@
 
   </style>
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <body>
 <div class="title">十大镇馆之宝之集章寻宝</div>
 <div class="treasure-container image1" style="margin: 50px;" onclick="toggleImage('image1')">
   <img class="hidden" src="战国伎乐铜房屋模型.jpg" alt="战国伎乐铜房屋模型" width="200px" height="200px" />
-  <div class="name" style="margin-top: 10px;">战国伎乐铜房屋模型</div>
+  <div class="name" style="margin-top: 10px;"title="点击一下">战国伎乐铜房屋模型</div>
 </div>
 <div class="treasure-container image2" style="margin: 50px;" onclick="toggleImage('image2')">
   <img class="hidden" src="战国越王者旨於赐剑.jpg" alt="战国越王者旨於赐剑" width="200px" height="200px" />
-  <div class="name" style="margin-top: 10px;">战国越王者旨於赐剑</div>
+  <div class="name" style="margin-top: 10px;"title="点击一下">战国越王者旨於赐剑</div>
 </div>
 <div class="treasure-container image3" style="margin: 50px;" onclick="toggleImage('image3')">
   <img class="hidden" src="元龙泉窑青瓷舟形砚滴.jpg" alt="元龙泉窑青瓷舟形砚滴" width="200px" height="200px" />
-  <div class="name" style="margin-top: 10px;">元龙泉窑青瓷舟形砚滴</div>
+  <div class="name" style="margin-top: 10px;"title="点击一下">元龙泉窑青瓷舟形砚滴</div>
 </div>
 <div class="treasure-container image4" style="margin: 50px;"onclick="toggleImage('image4')">
   <img class="hidden" src="新石器时代良渚文化玉琮.jpg" alt="新石器时代良渚文化玉琮" width="200px" height="200px" />
-  <div class="name" style="margin-top: 10px;">新石器时代良渚文化玉琮</div>
+  <div class="name" style="margin-top: 10px;"title="点击一下">新石器时代良渚文化玉琮</div>
 </div>
 <div class="treasure-container image5" style="margin: 50px;"onclick="toggleImage('image5')">
   <img class="hidden" src="元黄公富春山居图卷.jpg" alt="元黄公富春山居图卷" width="200px" height="200px" />
-  <div class="name" style="margin-top: 10px;">元黄公富春山居图卷</div>
+  <div class="name" style="margin-top: 10px;"title="点击一下">元黄公富春山居图卷</div>
 </div>
 <div class="treasure-container image6" style="margin: 50px;"onclick="toggleImage('image6')">
   <img class="hidden" src="吴越国鎏金纯银阿育王塔.jpg" alt="吴越国鎏金纯银阿育王塔" width="200px" height="200px" />
-  <div class="name" style="margin-top: 10px;">吴越国鎏金纯银阿育王塔</div>
+  <div class="name" style="margin-top: 10px;"title="点击一下">吴越国鎏金纯银阿育王塔</div>
 </div>
 <div class="treasure-container image7" style="margin: 50px;"onclick="toggleImage('image7')">
   <img class="hidden" src="唐彩凤鸣崎七弦琴.jpg" alt="唐彩凤鸣崎七弦琴" width="200px" height="200px" />
-  <div class="name" style="margin-top: 10px;">唐彩凤鸣崎七弦琴</div>
+  <div class="name" style="margin-top: 10px;"title="点击一下">唐彩凤鸣崎七弦琴</div>
 </div>
 <div class="treasure-container image8" style="margin: 50px;"onclick="toggleImage('image8')">
   <img class="hidden" src="双鸟朝阳纹牙雕.jpg" alt="双鸟朝阳纹牙雕" width="200px" height="200px" />
-  <div class="name" style="margin-top: 10px;">双鸟朝阳纹牙雕</div>
+  <div class="name" style="margin-top: 10px;"title="点击一下">双鸟朝阳纹牙雕</div>
 </div>
 <div class="treasure-container image9" style="margin: 50px;"onclick="toggleImage('image9')">
   <img class="hidden" src="清金箔贴花花轿.jpg" alt="清金箔贴花花轿" width="200px" height="200px" />
-  <div class="name" style="margin-top: 10px;">清金箔贴花花轿</div>
+  <div class="name" style="margin-top: 10px;"title="点击一下">清金箔贴花花轿</div>
 </div>
 <div class="treasure-container image10" style="margin: 50px;"onclick="toggleImage('image10')">
   <img class="hidden" src="彩塑泥菩萨立像.jpg" alt="彩塑泥菩萨立像" width="200px" height="200px" />
-  <div class="name" style="margin-top: 10px;">彩塑泥菩萨立像</div>
+  <div class="name" style="margin-top: 10px;"title="点击一下">彩塑泥菩萨立像</div>
 </div>
 <a href="index.html" class="back-to-home">返回首页</a>
 <button id="showAllStamps" onclick="showAllImages()" class="showAllStamps">显示全部</button>
@@ -228,6 +236,20 @@
 	        treasureContainers[i].querySelector('img').classList.remove('hidden');
 	      }
 	    }
+	  $(document).ready(function() {
+	    $('.name').hover(
+	      function() {
+	        var tooltipText = $(this).attr('title');
+	        $(this).attr('title', '');
+	        $('<div class="tooltip">' + tooltipText + '</div>').appendTo('body').fadeIn('fast');
+	      },
+	      function() {
+	        $(this).attr('title', $('.tooltip').text());
+	        $('.tooltip').remove();
+	      }
+	    );
+	  });
+
 
 </script>
 
