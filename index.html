@@ -73,6 +73,7 @@
 	  background-color: #9c0000;
 	  animation: flicker 0.8s infinite;
 	  animation-play-state: paused;
+	  border: none;
 	}
 	
 	.back-to-home:hover {
@@ -115,13 +116,6 @@
 	  color: white;
 	  font-weight: bold;
 	}
-	
-	@keyframes flicker {
-	  0% { background-color: darkred; }
-	  50% { background-color: #ffffff; }
-	  100% { background-color: darkred; }
-	}
-
   </style>
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -167,7 +161,7 @@
   <img class="hidden" src="彩塑泥菩萨立像.jpg" alt="彩塑泥菩萨立像" width="200px" height="200px" />
   <div class="name" style="margin-top: 10px;"title="点击一下">彩塑泥菩萨立像</div>
 </div>
-<a href="index.html" class="back-to-home">返回首页</a>
+ <button id="back-to-home" onclick="backToHome()" class="back-to-home">返回首页</button>
 <button id="showAllStamps" onclick="showAllImages()" class="showAllStamps">显示全部</button>
 
 <script>
@@ -249,8 +243,11 @@
 	      }
 	    );
 	  });
-
-
+	  
+	       function backToHome() {
+	           window.location.href = 'https://hr5689.github.io/ex5/index.html';
+	       }
+		   
 </script>
 
 </body>
